@@ -108,7 +108,7 @@ $language = setLanguage();
       <div class='row touteslespages'>
         <div class='col-md-12 col-sm-12 col-xs-12'>
       <p><h3 class='h33'><?php echo _("Slogan"); ?></h3></p>
-      <p class='slogan'><?php echo _("Merde"); ?></p>
+      <p class='slogan'><?php echo _("SubSlogan"); ?></p>
      
       </div>
       
@@ -150,7 +150,7 @@ $language = setLanguage();
             <p><center><img  src='photos/pages/dolphin3.jpg'  class='img-responsive'></center></p>
       </div>
        <div class='col-md-7 col-sm-7 col-xs-12 services'>
-         <p><?php echo _("ExcellenceOfCompany"); ?>
+         <p><?php echo _("ServicePage"); ?>
 </p>
        </div>
       

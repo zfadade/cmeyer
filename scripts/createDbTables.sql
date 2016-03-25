@@ -1,3 +1,5 @@
+-- USE db619302666;
+
 DROP TABLE IF EXISTS `user_info`;
 
 CREATE TABLE `user_info` (
@@ -13,4 +15,6 @@ CREATE TABLE `user_info` (
 
 INSERT INTO `user_info` (`userName`, `userEmail`, `userCompany`)
 VALUES
-  ('Zebulah','zfadade@yahoo.com', 'ASDM Solutions, Inc')
+  ('Zebulah','zfadade@yahoo.com', 'ASDM Solutions, Inc'),
+  ('Louisa','mdemontes@yahoo.com', 'EnfinDS')
+

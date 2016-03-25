@@ -1,4 +1,6 @@
 <?php
+require_once '../vendor/autoload.php';
+
 if (!isset($_SESSION)) 
 { 
      session_start(); 
@@ -96,4 +98,20 @@ function full_path()
     return $url;
 }
 
+
+function sendToSlack($url, $msg) {
+    // Instantiate with defaults, so all messages created
+    // will be sent from 'Cyril' and to the #accounting channel
+    // by default. Any names like @regan or #channel will also be linked.
+    $settings = [
+            'username' => 'Cyril',
+             'channel' => '#accounting',
+              'link_names' => true
+      ];
+    
+    // Instantiate without defaults
+    // $url="https://hooks.slack.com/services/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";
+    $client = new Maknz\Slack\Client($url);
+    $client->send($msg);
+}
 ?>

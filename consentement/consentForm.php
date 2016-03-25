@@ -3,23 +3,27 @@
 require_once("../includes/php_utils.php");
 require_once("consentDB.php");
 
+// echo 'Current PHP version: ' . phpversion();
+
 // i18n:
 $language = setLanguage();
 
-// The form has been submitted.
+// The form has been submitted. Dis "merci" ...
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $oui_non = filter_input(INPUT_POST, 'oui_non', FILTER_SANITIZE_STRING);
-    // echo "oui_non:  $oui_non";
     $saysYes = $oui_non == "oui" ? 1 : 0;
     $clientName = defaultVal($_SESSION, "clientName", "");
     $clientEmail = defaultVal($_SESSION, "clientEmail", "");
     $clientCode = defaultVal($_SESSION, "clientCode", "");
-    // echo "$clientName  $clientEmail  $clientCode  $saysYes";
   
     updateConsent($clientEmail, $saysYes); 
-
-    //TODO MDS:  make me a new page
-    // header('Location: users.php?action=updated');
+    if ($oui_non == "oui") {
+      header('Location: consentMerci.php');
+    }
+    else {
+      header('Location: nonConsentMerci.php');
+    }
+    
     exit;
 }
 ?>
